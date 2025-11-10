@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var sliderValue: Double = 50
-    @State private var target: Int = Int.random(in: 1...100)
+    @State var game = Game()
+    @State var sliderValue: Double = 50.0
     @State var alertIsVisible: Bool = false
     
     var body: some View {
@@ -13,14 +13,15 @@ struct ContentView: View {
                 Text("🎯 Acierta el número")
                     .font(.largeTitle)
                 
-                Text("Tu objetivo: \(target)")
+                Text("Tu objetivo: \(game.guessNumber)")
                     .font(.title2)
                 
                 // Slider
-                SliderView(value: sliderValue, lowValue: 1, highValue: 100)
+                SliderView(value: $sliderValue, lowValue: Game.lowNumber, highValue: Game.highNumber)
                 
                 // Botón para probar suerte
                 Button("Probar") {
+                    self.game.calculatePoint(sliderValue: sliderValue)
                     alertIsVisible = true
                 }
                 .padding()
@@ -28,9 +29,12 @@ struct ContentView: View {
                 .foregroundColor(Color.white)
                 .cornerRadius(12)
                 .alert(isPresented: $alertIsVisible){
-                    Alert(title: Text("Hello"),
-                          message: Text("This is my first alert"),
-                          dismissButton: .default(Text("Alert is Close")))
+                    Alert(title: Text("Has apuntado a \(Int(sliderValue))!"),
+                          message: Text("Te llevas \(game.points) puntos!"),
+                          dismissButton: .default(Text("Siguiente")){
+                            game.restart()
+                            sliderValue = 50.0
+                          })
                 }
                 
             }
@@ -44,13 +48,15 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .preferredColorScheme(.light)
+                .previewLayout(.device)
                 .previewDevice("iPhone 11 Pro")
         }
     }
 }
 
 struct SliderView: View {
-    @State var value: Double
+    @Binding var value: Double
     let lowValue: Double
     let highValue: Double
     var body: some View {
