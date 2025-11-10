@@ -1,22 +1,13 @@
-//
-//  ContentView.swift
-//  slide
-//
-//  Created by alumne on 27/10/2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     @State private var sliderValue: Double = 50
     @State private var target: Int = Int.random(in: 1...100)
     @State private var message: String = ""
+    @State var alertIsVisible: Bool = false
     
     var body: some View {
         
-        ZStack{
-            Color("BackgroundColor").ignoresSafeArea()
-        }
         VStack(spacing: 20) {
             Text("🎯 Acierta el número")
                 .font(.largeTitle)
@@ -33,38 +24,28 @@ struct ContentView: View {
             
             // Botón para probar suerte
             Button("Probar") {
-                checkResult()
+                alertIsVisible = true
             }
             .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
+            .background(Color.accentColor)
+            .foregroundColor(Color.white)
             .cornerRadius(12)
+            .alert(isPresented: $alertIsVisible){
+                Alert(title: Text("Hello"),
+                      message: Text("This is my first alert"),
+                      dismissButton: .default(Text("Alert is Close")))
+            }
             
-            Text(message)
-                .font(.title3)
-                .foregroundColor(.purple)
         }
         .padding()
     }
     
-    // Función para comprobar si acertó
-    func checkResult() {
-        let difference = abs(target - Int(sliderValue))
-        if difference == 0 {
-            message = "🎉 ¡Perfecto!"
-        } else if difference < 5 {
-            message = "🔥 Casi! Diferencia de \(difference)"
-        } else {
-            message = "😅 Estuviste a \(difference) puntos"
-        }
-        
-        // Genera un nuevo objetivo para seguir jugando
-        target = Int.random(in: 1...100)
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
