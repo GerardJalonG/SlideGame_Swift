@@ -1,10 +1,3 @@
-//
-//  Game.swift
-//  slide
-//
-//  Created by alumne on 10/11/2025.
-//
-
 import Foundation
 
 struct Game {
@@ -22,13 +15,13 @@ struct Game {
     }
     
     mutating func restart(){
-        guessNumber = Int.random(in: 1...100)
+        guessNumber = Int.random(in: Int(Game.lowNumber)...Int(Game.highNumber))
     }
     
     mutating func restartGame() {
         self.score = 0
         self.points = 0
         self.rounds = 0
-        self.guessNumber = Int.random(in: 1...100)
+        self.guessNumber = Int.random(in: Int(Game.lowNumber)...Int(Game.highNumber))
     }
 }

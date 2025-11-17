@@ -5,6 +5,8 @@ struct ContentView: View {
     
     @State var sliderValue: Double = 50.0
     @State var alertIsVisible: Bool = false
+    @State private var showLastScores = false
+
     
     var body: some View {
         ZStack{
