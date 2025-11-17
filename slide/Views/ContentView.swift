@@ -9,7 +9,6 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             Color("BackgroundColor")
-                            .ignoresSafeArea()
             BackgroundView()
             VStack(spacing: 20) {
                 Text("🎯 Acierta el número")
@@ -23,6 +22,7 @@ struct ContentView: View {
                 
                 // Botón para probar suerte
                 Button("Probar") {
+                    self.gameStore.addScore(score: gameStore.game.points)
                     self.gameStore.calculatePoint(sliderValue: sliderValue)
                     alertIsVisible = true
                 }
@@ -50,6 +50,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .environmentObject(GameStore())
                 .preferredColorScheme(.light)
                 .previewLayout(.device)
                 .previewDevice("iPhone 11 Pro")
