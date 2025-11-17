@@ -10,7 +10,7 @@ struct BackgroundView: View {
             }
             Spacer()
             HStack {
-                RoundedTextView(text: "SCORE", value: 0)
+                RoundedTextView(text: "SCORE", value: 100)
                 Spacer()
                 RoundedTextView(text: "ROUND", value: 0)
             }
@@ -35,10 +35,13 @@ struct RoundedTextView: View{
     let text : String
     let value : Int
     var body: some View {
-        Text(text)
-        Text("\(value)")
-            .padding()
-            .overlay(RoundedRectangle(cornerRadius: 10).stroke(/*@START_MENU_TOKEN@*/Color.blue/*@END_MENU_TOKEN@*/))
+        VStack {
+            Text(text)
+            Text("\(value)")
+                .padding()
+                .frame(width: 68, height: 56)
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue))
+        }
     }
 }
 struct BackgroundView_Previews: PreviewProvider {

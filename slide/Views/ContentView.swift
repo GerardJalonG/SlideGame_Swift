@@ -9,6 +9,7 @@ struct ContentView: View {
         ZStack{
             Color("BackgroundColor")
                             .ignoresSafeArea()
+            BackgroundView()
             VStack(spacing: 20) {
                 Text("🎯 Acierta el número")
                     .font(.largeTitle)
@@ -36,10 +37,6 @@ struct ContentView: View {
                             sliderValue = 50.0
                           })
                 }
-                
-                Image(systemName: "list.dash")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    
                 
             }
             .padding()
