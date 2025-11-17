@@ -1,17 +1,11 @@
-//
-//  slideApp.swift
-//  slide
-//
-//  Created by alumne on 27/10/2025.
-//
-
 import SwiftUI
 
 @main
 struct slideApp: App {
+    @StateObject var gameStore = GameStore()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(gameStore)
         }
     }
 }

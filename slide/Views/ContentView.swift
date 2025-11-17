@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var game = Game()
+    @EnvironmentObject var gameStore:GameStore
+    
     @State var sliderValue: Double = 50.0
     @State var alertIsVisible: Bool = false
     
@@ -14,7 +15,7 @@ struct ContentView: View {
                 Text("🎯 Acierta el número")
                     .font(.largeTitle)
                 
-                Text("Tu objetivo: \(game.guessNumber)")
+                Text("Tu objetivo: \(gameStore.game.guessNumber)")
                     .font(.title2)
                 
                 // Slider
@@ -22,7 +23,7 @@ struct ContentView: View {
                 
                 // Botón para probar suerte
                 Button("Probar") {
-                    self.game.calculatePoint(sliderValue: sliderValue)
+                    self.gameStore.calculatePoint(sliderValue: sliderValue)
                     alertIsVisible = true
                 }
                 .padding()
@@ -31,9 +32,9 @@ struct ContentView: View {
                 .cornerRadius(12)
                 .alert(isPresented: $alertIsVisible){
                     Alert(title: Text("Has apuntado a \(Int(sliderValue))!"),
-                          message: Text("Te llevas \(game.points) puntos!"),
+                          message: Text("Te llevas \(gameStore.game.points) puntos!"),
                           dismissButton: .default(Text("Siguiente")){
-                            game.restart()
+                            gameStore.restart()
                             sliderValue = 50.0
                           })
                 }
