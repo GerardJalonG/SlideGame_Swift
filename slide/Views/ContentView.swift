@@ -37,6 +37,10 @@ struct ContentView: View {
                           })
                 }
                 
+                Image(systemName: "list.dash")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    
+                
             }
             .padding()
         }

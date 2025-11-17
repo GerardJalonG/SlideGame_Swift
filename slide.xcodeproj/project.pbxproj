@@ -12,6 +12,7 @@
 		EF9D0CBB2EAFD3B30049D7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9D0CBA2EAFD3B30049D7E4 /* Assets.xcassets */; };
 		EF9D0CBE2EAFD3B30049D7E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9D0CBD2EAFD3B30049D7E4 /* Preview Assets.xcassets */; };
 		EFC44D882EC2423F002E6708 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC44D872EC2423F002E6708 /* Game.swift */; };
+		EFC821212ECB6478002FC289 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC821202ECB6478002FC289 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EF9D0CBD2EAFD3B30049D7E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF9D0CBF2EAFD3B30049D7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFC44D872EC2423F002E6708 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		EFC821202ECB6478002FC289 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,12 @@
 		EF9D0CB52EAFD3B30049D7E4 /* slide */ = {
 			isa = PBXGroup;
 			children = (
+				EFC8211F2ECB6418002FC289 /* Views */,
 				EF9D0CB62EAFD3B30049D7E4 /* slideApp.swift */,
-				EF9D0CB82EAFD3B30049D7E4 /* ContentView.swift */,
+				EFC44D872EC2423F002E6708 /* Game.swift */,
 				EF9D0CBA2EAFD3B30049D7E4 /* Assets.xcassets */,
 				EF9D0CBF2EAFD3B30049D7E4 /* Info.plist */,
 				EF9D0CBC2EAFD3B30049D7E4 /* Preview Content */,
-				EFC44D872EC2423F002E6708 /* Game.swift */,
 			);
 			path = slide;
 			sourceTree = "<group>";
@@ -70,6 +72,15 @@
 				EF9D0CBD2EAFD3B30049D7E4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EFC8211F2ECB6418002FC289 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF9D0CB82EAFD3B30049D7E4 /* ContentView.swift */,
+				EFC821202ECB6478002FC289 /* BackgroundView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +154,7 @@
 			files = (
 				EF9D0CB92EAFD3B30049D7E4 /* ContentView.swift in Sources */,
 				EFC44D882EC2423F002E6708 /* Game.swift in Sources */,
+				EFC821212ECB6478002FC289 /* BackgroundView.swift in Sources */,
 				EF9D0CB72EAFD3B30049D7E4 /* slideApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
