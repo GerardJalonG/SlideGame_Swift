@@ -24,7 +24,6 @@ struct ContentView: View {
                 
                 // Botón para probar suerte
                 Button("Probar") {
-                    self.gameStore.addScore(score: gameStore.game.points)
                     self.gameStore.calculatePoint(sliderValue: sliderValue)
                     alertIsVisible = true
                 }
