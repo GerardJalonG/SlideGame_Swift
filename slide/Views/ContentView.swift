@@ -55,7 +55,7 @@ struct ContentView_Previews: PreviewProvider {
                 .environmentObject(GameStore())
                 .preferredColorScheme(.light)
                 .previewLayout(.device)
-                .previewDevice("iPhone 11 Pro")
+                .previewDevice("iPhone 8")
         }
     }
 }

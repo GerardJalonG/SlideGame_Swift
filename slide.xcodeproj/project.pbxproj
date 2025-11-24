@@ -14,7 +14,6 @@
 		EFC44D882EC2423F002E6708 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC44D872EC2423F002E6708 /* Game.swift */; };
 		EFC821212ECB6478002FC289 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC821202ECB6478002FC289 /* BackgroundView.swift */; };
 		EFC821252ECB7439002FC289 /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC821242ECB7439002FC289 /* GameStore.swift */; };
-		EFC821342ECB82B2002FC289 /* LastScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC821332ECB82B2002FC289 /* LastScoresView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		EFC44D872EC2423F002E6708 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		EFC821202ECB6478002FC289 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		EFC821242ECB7439002FC289 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
-		EFC821332ECB82B2002FC289 /* LastScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastScoresView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 			children = (
 				EF9D0CB82EAFD3B30049D7E4 /* ContentView.swift */,
 				EFC821202ECB6478002FC289 /* BackgroundView.swift */,
-				EFC821332ECB82B2002FC289 /* LastScoresView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,7 +166,6 @@
 				EF9D0CB92EAFD3B30049D7E4 /* ContentView.swift in Sources */,
 				EFC44D882EC2423F002E6708 /* Game.swift in Sources */,
 				EFC821212ECB6478002FC289 /* BackgroundView.swift in Sources */,
-				EFC821342ECB82B2002FC289 /* LastScoresView.swift in Sources */,
 				EFC821252ECB7439002FC289 /* GameStore.swift in Sources */,
 				EF9D0CB72EAFD3B30049D7E4 /* slideApp.swift in Sources */,
 			);

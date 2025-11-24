@@ -9,7 +9,7 @@ struct Game {
     private(set) var rounds = 0
     
     mutating func calculatePoint(sliderValue: Double){
-        self.points = Int(Game.highNumber) - abs(guessNumber-Int(sliderValue.rounded()))
+        self.points = Int(Game.highNumber) - abs(guessNumber-Int(sliderValue))
         self.score += points
         self.rounds += 1
     }
